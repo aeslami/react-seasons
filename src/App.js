@@ -19,7 +19,7 @@ class App extends Component {
     );
   }
 
-  render() {
+  renderSeason() {
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error: {this.state.errorMessage}</div>;
     }
@@ -29,6 +29,10 @@ class App extends Component {
       return <SeasonDisplay lat={lat} />;
     }
     return <div>Loading</div>;
+  }
+
+  render() {
+    return <div>{this.renderSeason()}</div>;
   }
 }
 
